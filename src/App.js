@@ -4,7 +4,7 @@ import NavigationBar from "./Components/NavigationBar";
 import AboutUs from "./Components/AboutUs";
 import OurTeam from "./Components/OurTeam";
 import Testimonials from "./Components/Testimonials";
-
+import NewsLetter from "./Components/NewsLetter"
 function App() {
 
   const AppStyles = {
@@ -26,6 +26,9 @@ function App() {
       </div>
       <div>
         <Testimonials/>
+      </div>
+      <div>
+        <NewsLetter />
       </div>
     </div>
   );
