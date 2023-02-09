@@ -67,7 +67,7 @@ const Footer = () => {
           <img style={styleFooter.iconsPadding} src="./images/phone.png" />
           <span>+1012 3456 789</span>
         </div>
-        <div>
+        <div style={{marginBottom:"5px",marginTop:"5px"}}>
           <img style={styleFooter.iconsPadding} src="./images/email.png" />
           <span>demo@gmail.com</span>
         </div>
@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
       </Col>
       <Col xs={24} sm={24} md={24} lg={6}>
-        <div>
+        <div style={{marginBottom:"7px"}}>
           <img style={styleFooter.footerLogos} src="./images/insta.png" />
           <img style={styleFooter.footerLogos} src="./images/linkedin.png" />
           <img style={styleFooter.footerLogos} src="./images/google.png" />
