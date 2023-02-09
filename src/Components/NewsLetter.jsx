@@ -1,6 +1,4 @@
 import React from "react";
-import { Col, Row } from "antd";
-
 import { Button, Input } from "antd";
 const NewsLetter = () => {
   const stylesNewsLetter = {

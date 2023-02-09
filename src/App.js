@@ -4,15 +4,15 @@ import NavigationBar from "./Components/NavigationBar";
 import AboutUs from "./Components/AboutUs";
 import OurTeam from "./Components/OurTeam";
 import Testimonials from "./Components/Testimonials";
-import NewsLetter from "./Components/NewsLetter"
+import NewsLetter from "./Components/NewsLetter";
+import Footer from "./Components/Footer";
 function App() {
-
   const AppStyles = {
-    aboutUsStyle:{
-      backgroundColor:"white",
-      marginTop:"50px"
-    }
-  }
+    aboutUsStyle: {
+      backgroundColor: "white",
+      marginTop: "50px",
+    },
+  };
   return (
     <div>
       <div>
@@ -25,10 +25,13 @@ function App() {
         <OurTeam />
       </div>
       <div>
-        <Testimonials/>
+        <Testimonials />
       </div>
       <div>
         <NewsLetter />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
