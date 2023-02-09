@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import NavigationBar from "./Components/NavigationBar";
+import AboutUs from "./Components/AboutUs";
+import OurTeam from "./Components/OurTeam";
+import Testimonials from "./Components/Testimonials";
 
 function App() {
+
+  const AppStyles = {
+    aboutUsStyle:{
+      backgroundColor:"white",
+      marginTop:"50px"
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <NavigationBar />
+      </div>
+      <div style={{ backgroundColor: "white" }}>
+        <AboutUs />
+      </div>
+      <div>
+        <OurTeam />
+      </div>
+      <div>
+        <Testimonials/>
+      </div>
     </div>
   );
 }
