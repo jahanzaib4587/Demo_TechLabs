@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import styled from "styled-components";
 
 const NavigationBar = () => {
-  
+  const [hideNavLinks, setHideNavLinks] = useState(false);
   const MainContainer = styled.div`
     box-shadow: 0px 4px 18px rgba(150, 150, 150, 0.25);
     align-items: center;
@@ -14,19 +14,22 @@ const NavigationBar = () => {
     color: #a6a6a6;
   `;
 
-  const Logo = styled.img`
-    @media (min-width: 1024px) and (max-width: 768px) {
-      width: 60%;
-    }
-  `;
-
   return (
     <MainContainer className="navbar-container d-flex justify-content-around">
+      <div className="hideBreadCrum">
+        <img
+          onClick={() => {
+            setHideNavLinks(!hideNavLinks);
+          }}
+          src="./images/sandwitch.png"
+          alt="hidden-icons"
+        />
+      </div>
       <div>
-        <Logo src="./images/navLogo.png" alt="nav-image" />
+        <img className="navLogo" src="./images/navLogo.png" alt="nav-image" />
       </div>
 
-      <div>
+      <div className="navLinks">
         <ul>
           <li className="nav-link ">
             <a href="#">Home</a>
@@ -52,9 +55,24 @@ const NavigationBar = () => {
       </div>
 
       <div className="d-flex align-items-center">
-        <Input size="large" placeholder="Search Here" prefix={<SearchIcon />} />
-        <img src="./images/cart.png" alt="cart-image" className="mx-4" />
-        <img src="./images/profile.png" alt="profile-icon" className="mx-2" />
+        <Input
+          size="medium"
+          placeholder="Search Here"
+          prefix={<SearchIcon />}
+          className="navInput navSearch"
+        />
+        <div className="NavLogos">
+          <img
+            className="NavLogoSpacing1"
+            src="./images/cart.png"
+            alt="cart-image"
+          />
+          <img
+            className="NavLogoSpacing2"
+            src="./images/profile.png"
+            alt="profile-icon"
+          />
+        </div>
       </div>
     </MainContainer>
   );

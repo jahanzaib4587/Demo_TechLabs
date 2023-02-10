@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <div>
-        {/* <NavigationBar /> */}
+        <NavigationBar />
       </div>
       <div style={{ backgroundColor: "white" }}>
         <AboutUs />
