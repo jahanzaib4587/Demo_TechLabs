@@ -22,7 +22,7 @@ const Testimonials = () => {
       padding: "30px 40px 40px 40px",
       borderRadius: "10px",
       marginTop: "30px",
-      width: "900px",
+      // width: "900px",
     },
     classContainer: {
       display: "flex",

@@ -7,12 +7,6 @@ import Testimonials from "./Components/Testimonials";
 import NewsLetter from "./Components/NewsLetter";
 import Footer from "./Components/Footer";
 function App() {
-  const AppStyles = {
-    aboutUsStyle: {
-      backgroundColor: "white",
-      marginTop: "50px",
-    },
-  };
   return (
     <div>
       <div>

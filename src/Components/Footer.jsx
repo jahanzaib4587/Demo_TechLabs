@@ -52,6 +52,7 @@ const Footer = () => {
     },
     marginBottom20: { marginBottom: "20px" },
     inputWidth: { width: "70%" },
+
   };
   return (
     <Row style={styleFooter.rowColor} justify="center">

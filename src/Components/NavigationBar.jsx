@@ -1,23 +1,29 @@
 import React from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
+import styled from "styled-components";
 
 const NavigationBar = () => {
-  const StylesNavBar = {
-    navMain: {
-      boxShadow: "0px 4px 18px rgba(150, 150, 150, 0.25)",
-      alignItems: "center",
-    },
-    searchIcon: { color: "#a6a6a6" },
-  };
+  
+  const MainContainer = styled.div`
+    box-shadow: 0px 4px 18px rgba(150, 150, 150, 0.25);
+    align-items: center;
+  `;
+
+  const SearchIcon = styled(SearchOutlined)`
+    color: #a6a6a6;
+  `;
+
+  const Logo = styled.img`
+    @media (min-width: 1024px) and (max-width: 768px) {
+      width: 60%;
+    }
+  `;
 
   return (
-    <div
-      className="navbar-container d-flex justify-content-around"
-      style={StylesNavBar.navMain}
-    >
+    <MainContainer className="navbar-container d-flex justify-content-around">
       <div>
-        <img src="./images/navLogo.png" alt="nav-image" />
+        <Logo src="./images/navLogo.png" alt="nav-image" />
       </div>
 
       <div>
@@ -45,14 +51,12 @@ const NavigationBar = () => {
         </ul>
       </div>
 
-      <div>
-        <Input
-          size="large"
-          placeholder="Search Here"
-          prefix={<SearchOutlined style={StylesNavBar.searchIcon} />}
-        />
+      <div className="d-flex align-items-center">
+        <Input size="large" placeholder="Search Here" prefix={<SearchIcon />} />
+        <img src="./images/cart.png" alt="cart-image" className="mx-4" />
+        <img src="./images/profile.png" alt="profile-icon" className="mx-2" />
       </div>
-    </div>
+    </MainContainer>
   );
 };
 

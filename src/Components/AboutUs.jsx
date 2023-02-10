@@ -1,29 +1,37 @@
 import React from "react";
 import { Col, Row } from "antd";
+import styled from "styled-components";
 
 const AboutUs = () => {
-  const stylesAboutUs = {
-    logoSize: { width: "434px", height: "95px" },
-    textFirst: { fontSize: "18px", fontWeight: "500" },
-    textSecond: { fontSize: "30px", fontWeight: "500" },
-    textThird: { fontSize: "17px", fontWeight: "400" },
-  };
+  const TextAboutUs = styled.span`
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+  `;
+  const TextWhoWeAre = styled.span`
+    font-size: 30px;
+    font-weight: 500;
+    display: block;
+  `;
+  const TextDescription = styled.span`
+    font-size: 17px;
+    font-weight: 400;
+    display: block;
+    text-align: justify;
+  `;
+  const LogoStyle = styled.img`
+    width: 50%;
+    height: auto;
+  `;
 
   return (
-    <Row
-      justify={"center"}
-      className="px-2 py-4 mt-3"
-      style={stylesAboutUs.fontStyle}
-    >
-      <Col xs={24} sm={24} md={24} lg={19}>
-        <span style={stylesAboutUs.textFirst}>ABOUT US</span>
-      </Col>
+    <Row justify={"center"} className="px-2 py-4 mt-3">
+      <Col xs={22} sm={22} md={22} lg={19}>
+        <TextAboutUs>ABOUT US</TextAboutUs>
 
-      <Col xs={24} sm={24} md={24} lg={19}>
-        <span style={stylesAboutUs.textSecond}>Who we are?</span>
-      </Col>
-      <Col xs={24} sm={24} md={24} lg={9}>
-        <span style={stylesAboutUs.textThird}>
+        <TextWhoWeAre>Who we are?</TextWhoWeAre>
+
+        <TextDescription>
           KLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
           tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.KLorem
           ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
@@ -33,20 +41,17 @@ const AboutUs = () => {
           consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
           mattis, pulvinar t, consectetur adipiscing elit. Ut elit tellus,
           luctus nec ullamcorper mattis, pulvinar
-        </span>
+        </TextDescription>
       </Col>
+
       <Col
-        xs={24}
-        sm={24}
-        md={24}
+        xs={22}
+        sm={22}
+        md={22}
         lg={10}
         className="d-flex justify-content-center"
       >
-        <img
-          style={stylesAboutUs.logoSize}
-          src="./images/navLogo.png"
-          alt="nav-image"
-        />
+        <LogoStyle src="./images/navLogo.png" alt="nav-image" />
       </Col>
     </Row>
   );
