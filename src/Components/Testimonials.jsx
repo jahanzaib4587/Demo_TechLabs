@@ -1,53 +1,76 @@
 import React from "react";
+import styled from "styled-components";
 
 const Testimonials = () => {
-  const stylesTesttimonials = {
-    textAlign: {
-      textAlign: "center",
-      backgroundColor: "white",
-      padding: "40px",
-    },
-    text1: { fontWeight: "500", fontSize: "22px" },
-    text2: { fontWeight: "700", fontSize: "30px" },
-    text3: { fontWeight: "500", fontSize: "24px" },
-    text3Div: {
-      paddingBottom: "30px",
-    },
-    text4: {
-      fontWeight: "400",
-      fontSize: "16px",
-    },
-    text4Div: {
-      boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
-      padding: "30px 40px 40px 40px",
-      borderRadius: "10px",
-      marginTop: "30px",
-      // width: "900px",
-    },
-    classContainer: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-    },
-  };
+  const MainDiv = styled.div`
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    @media (max-width: 320px) {
+      padding: 10px;
+    }
+  `;
+  const TextOne = styled.span`
+    font-weight: 700;
+    font-size: 30px;
+    @media (max-width: 320px) {
+      font-size: 25px;
+    }
+  `;
+  const TextTwo = styled.span`
+    font-weight: 500;
+    font-size: 22px;
+    @media (max-width: 320px) {
+      font-size: 18px;
+    }
+  `;
+  const TextThree = styled.span`
+    font-weight: 500;
+    font-size: 24px;
+  `;
+  const TextFour = styled.span`
+    font-weight: 400;
+    font-size: 16px;
+  `;
+  const TextThreeDiv = styled.div`
+    padding-bottom: "30px";
+  `;
+  const TextFourDiv = styled.div`
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    padding: 30px 40px 40px 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+    @media (max-width: 320px) {
+      padding: 30px 20px 40px 20px;
+    }
+  `;
+
+  const ClassContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  `;
+  const QuoteImage = styled.img`
+    padding-right: 10px;
+  `;
+
   return (
-    <div style={stylesTesttimonials.textAlign}>
-      <div className="container" style={stylesTesttimonials.classContainer}>
+    <MainDiv>
+      <ClassContainer className="container">
         <div>
-          <span style={stylesTesttimonials.text1}>WE ARE TRUSTED</span>
+          <TextOne>WE ARE TRUSTED</TextOne>
         </div>
         <div>
-          <span style={stylesTesttimonials.text2}> What they say about us</span>
+          <TextTwo> What they say about us</TextTwo>
         </div>
 
-        <div style={stylesTesttimonials.text4Div}>
-          <div style={stylesTesttimonials.text3Div}>
-            <span style={stylesTesttimonials.text3}>
-              We Always Give The Best
-            </span>
-          </div>
-          <span style={stylesTesttimonials.text4}>
+        <TextFourDiv>
+          <TextThreeDiv>
+            <QuoteImage src="./images/quote.png" />
+            <TextThree>We Always Give The Best</TextThree>
+          </TextThreeDiv>
+          <TextFour>
             KLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             KLorem ipsum dolor sit amet, consectetur adipiscing elit. KLorem
             ipsum dolor sit amet, consectetur adipiscing elit. Ut elit KLorem
@@ -60,10 +83,10 @@ const Testimonials = () => {
             consectetur adipiscing elit. KLorem ipsum dolor sit amet,
             consectetur adipiscing elit. Ut elit KLorem ipsum dolor sit amet,
             consectetur adipiscing elit.
-          </span>
-        </div>
-      </div>
-    </div>
+          </TextFour>
+        </TextFourDiv>
+      </ClassContainer>
+    </MainDiv>
   );
 };
 

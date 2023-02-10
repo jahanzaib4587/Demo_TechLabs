@@ -19,9 +19,6 @@ const OurTeam = () => {
     margin-top: 70px;
   `;
 
-  // const CardBox = styled.Card
-
-  // @media (max-width: 768px) {
   const CardObjects = [
     {
       img: "./images/profile1.png",
