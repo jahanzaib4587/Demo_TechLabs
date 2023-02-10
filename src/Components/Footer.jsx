@@ -1,87 +1,101 @@
 import React from "react";
 import { Col, Row, Divider } from "antd";
 import { Button, Input } from "antd";
+import styled from "styled-components";
 const Footer = () => {
-  const styleFooter = {
-    imageSize: {
-      width: "250px",
-      height: "55px",
-    },
-    imageStyles: {
-      display: "flex",
-      justifyContent: "center",
-      paddingBottom: "30px",
-      paddingTop: "30px",
-    },
-    rowColor: {
-      backgroundColor: "white",
-      paddingBottom: "40px",
-    },
-    footerLogos: {
-      backgroundColor: "black",
-      padding: "7px",
-      borderRadius: "50px",
-      marginLeft: "5px",
-      marginRight: "5px",
-    },
-    textFirst: {
-      fontWeight: "600",
-      fontSize: "18px",
-    },
-    textFirstDiv: {
-      paddingBottom: "10px",
-    },
-    headingTextFooter: {
-      fontWeight: "600",
-      fontSize: "18px",
-    },
-    iconsPadding: {
-      paddingLeft: "5px",
-      paddingRight: "5px",
-    },
-    btn: {
-      backgroundColor: "#848484",
-      color: "white",
-      fontWeight: "600",
-    },
-    divFooterLastItem: {
-      backgroundColor: "black",
-      color: "white",
-      padding: "20px",
-      borderRadius: "20px",
-    },
-    marginBottom20: { marginBottom: "20px" },
-    inputWidth: { width: "70%" },
+  const ImageSize = styled.img`
+    width: 250px;
+    height: 55px;
+  `;
 
-  };
+  const ImageStyles = styled(Col)`
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  `;
+
+  const RowColor = styled(Row)`
+    background-color: white;
+    padding-bottom: 40px;
+  `;
+
+  const FooterLogos = styled.img`
+    background-color: black;
+    padding: 5px;
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+  `;
+
+  const TextFirst = styled.span`
+    font-weight: 600;
+    font-size: 18px;
+  `;
+
+  const HeadingTextFooter = styled.span`
+    font-weight: 600;
+    font-size: 18px;
+  `;
+
+  const IconsPadding = styled.img`
+    padding-left: 5px;
+    padding-right: 5px;
+  `;
+
+  const Btn = styled(Button)`
+    background-color: #848484;
+    color: white;
+    font-weight: 600;
+  `;
+
+  const DivFooterLastItem = styled.div`
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+  `;
+
+  const MarginBottom20 = styled.div`
+    margin-bottom: 20px;
+  `;
+
+  const LastRow = styled(Col)`
+    @media only screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  `;
+
   return (
-    <Row style={styleFooter.rowColor} justify="center">
-      <Col xs={24} sm={24} md={24} lg={24} style={styleFooter.imageStyles}>
-        <img style={styleFooter.imageSize} src="./images/navLogo.png" />
-      </Col>
+    <RowColor justify="center">
+      <ImageStyles xs={24} sm={24} md={24} lg={24}>
+        <ImageSize src="./images/navLogo.png" />
+      </ImageStyles>
       <Divider />
-      <Col xs={24} sm={24} md={4} lg={4}>
+      <Col style={{ marginBottom: "20px" }} xs={20} sm={24} md={4} lg={4}>
         <div>
-          <span style={styleFooter.headingTextFooter}>Reach Us</span>
+          <HeadingTextFooter>Reach Us</HeadingTextFooter>
         </div>
         <div>
-          <img style={styleFooter.iconsPadding} src="./images/phone.png" />
+          <IconsPadding src="./images/phone.png" />
           <span>+1012 3456 789</span>
         </div>
-        <div style={{marginBottom:"5px",marginTop:"5px"}}>
-          <img style={styleFooter.iconsPadding} src="./images/email.png" />
+        <div style={{ marginBottom: "5px", marginTop: "5px" }}>
+          <IconsPadding src="./images/email.png" />
           <span>demo@gmail.com</span>
         </div>
         <div>
-          <img style={styleFooter.iconsPadding} src="./images/map.png" />
+          <IconsPadding src="./images/map.png" />
           <span>
             132 Dartmouth Street Boston, Massachusetts 02156 United States
           </span>
         </div>
       </Col>
-      <Col xs={24} sm={24} md={4} lg={4}>
+      <Col xs={10} sm={24} md={4} lg={4}>
         <div>
-          <span style={styleFooter.headingTextFooter}>Company</span>
+          <HeadingTextFooter>Company</HeadingTextFooter>
         </div>
         <div>
           <span>About</span>
@@ -93,9 +107,9 @@ const Footer = () => {
           <span>Blogs</span>
         </div>
       </Col>
-      <Col xs={24} sm={24} md={4} lg={4}>
+      <Col xs={10} sm={24} md={4} lg={4}>
         <div>
-          <span style={styleFooter.headingTextFooter}>Legal</span>
+          <HeadingTextFooter>Legal</HeadingTextFooter>
         </div>
         <div>
           <span>Privacy Policy</span>
@@ -110,9 +124,15 @@ const Footer = () => {
           <span>Refund Policy</span>
         </div>
       </Col>
-      <Col xs={24} sm={24} md={4} lg={4}>
+      <Col
+        style={{ marginBottom: "30px", marginTop: "20px" }}
+        xs={20}
+        sm={24}
+        md={4}
+        lg={4}
+      >
         <div>
-          <span style={styleFooter.headingTextFooter}>Useful Links</span>
+          <HeadingTextFooter>Useful Links</HeadingTextFooter>
         </div>
         <div>
           <span>Tech Labz</span>
@@ -124,36 +144,36 @@ const Footer = () => {
           <span>Form</span>
         </div>
       </Col>
-      <Col xs={24} sm={24} md={24} lg={6}>
-        <div style={{marginBottom:"7px"}}>
-          <img style={styleFooter.footerLogos} src="./images/insta.png" />
-          <img style={styleFooter.footerLogos} src="./images/linkedin.png" />
-          <img style={styleFooter.footerLogos} src="./images/google.png" />
-          <img style={styleFooter.footerLogos} src="./images/fb.png" />
-          <img style={styleFooter.footerLogos} src="./images/twitter.png" />
-          <img style={styleFooter.footerLogos} src="./images/youtube.png" />
+      <LastRow xs={24} sm={24} md={24} lg={6}>
+        <div style={{ marginBottom: "7px" }}>
+          <FooterLogos src="./images/insta.png" />
+          <FooterLogos src="./images/linkedin.png" />
+          <FooterLogos src="./images/google.png" />
+          <FooterLogos src="./images/fb.png" />
+          <FooterLogos src="./images/twitter.png" />
+          <FooterLogos src="./images/youtube.png" />
         </div>
-        <div style={styleFooter.divFooterLastItem}>
-          <div style={styleFooter.marginBottom20}>
-            <span style={styleFooter.textFirst}>Join Our News Letter</span>
-          </div>
-          <div style={styleFooter.marginBottom20}>
+        <DivFooterLastItem>
+          <MarginBottom20>
+            <TextFirst>Join Our News Letter</TextFirst>
+          </MarginBottom20>
+          <MarginBottom20>
             <Input.Group compact>
               <Input
-                style={styleFooter.inputWidth}
+                style={{ width: "50%" }}
                 placeholder={"Your Email Address"}
                 //   defaultValue="https://ant.design"
               />
 
-              <Button style={styleFooter.btn}>Subscribe</Button>
+              <Btn>Subscribe</Btn>
             </Input.Group>
-          </div>
+          </MarginBottom20>
           <span>
             * Will send you weekly updates for your better tool management.
           </span>
-        </div>
-      </Col>
-    </Row>
+        </DivFooterLastItem>
+      </LastRow>
+    </RowColor>
   );
 };
 
