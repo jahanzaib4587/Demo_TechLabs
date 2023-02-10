@@ -66,7 +66,7 @@ const items = [
   },
 ];
 
-const NavigationBar = () => {
+export const Header = () => {
   const [hideNavLinks, setHideNavLinks] = useState(false);
   const MainContainer = styled.div`
     box-shadow: 0px 4px 18px rgba(150, 150, 150, 0.25);
@@ -143,5 +143,3 @@ const NavigationBar = () => {
     </MainContainer>
   );
 };
-
-export default NavigationBar;

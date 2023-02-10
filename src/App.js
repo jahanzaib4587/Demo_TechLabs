@@ -1,15 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
-import NavigationBar from "./Components/NavigationBar";
-import AboutUs from "./Components/AboutUs";
-import OurTeam from "./Components/OurTeam";
-import Testimonials from "./Components/Testimonials";
-import NewsLetter from "./Components/NewsLetter";
-import Footer from "./Components/Footer";
+// import NavigationBar from "./Components/NavigationBar";
+// import AboutUs from "./Components/AboutUs";
+// import OurTeam from "./Components/OurTeam";
+// import Testimonials from "./Components/Testimonials";
+// import NewsLetter from "./Components/NewsLetter";
+// import Footer from "./Components/Footer";
+import { Header } from "./Header/index";
+import { Footer } from "./Footer/index";
+import { AboutUs } from "./AboutUs";
+
 function App() {
   return (
     <div>
-      <div>
+      {/* <div>
         <NavigationBar />
       </div>
       <div style={{ backgroundColor: "white" }}>
@@ -26,7 +30,10 @@ function App() {
       </div>
       <div>
         <Footer />
-      </div>
+      </div> */}
+      <Header />
+      <AboutUs />
+      <Footer />
     </div>
   );
 }

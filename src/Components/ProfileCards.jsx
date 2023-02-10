@@ -62,7 +62,6 @@ export const ProfileCards = (props) => {
     @media only screen and (max-width: 320px) {
       width: 50%;
     }
-    
   `;
   return (
     <CardAdjustments>

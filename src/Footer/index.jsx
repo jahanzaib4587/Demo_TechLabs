@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row, Divider } from "antd";
 import { Button, Input } from "antd";
 import styled from "styled-components";
-const Footer = () => {
+export const Footer = () => {
   const ImageSize = styled.img`
     width: 250px;
     height: 55px;
@@ -176,5 +176,3 @@ const Footer = () => {
     </RowColor>
   );
 };
-
-export default Footer;
