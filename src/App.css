@@ -114,3 +114,9 @@ a {
     padding: 0px;
   }
 }
+
+.navColor{
+	background-color: #ffffff;
+	display: flex;
+	justify-content: flex-end;
+}

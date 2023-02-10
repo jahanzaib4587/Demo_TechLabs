@@ -2,6 +2,69 @@ import React, { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import styled from "styled-components";
+import { Button, Dropdown, Space } from "antd";
+const items = [
+  {
+    key: "1",
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.antgroup.com"
+      >
+        Home
+      </a>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.aliyun.com"
+      >
+        Feature
+      </a>
+    ),
+  },
+  {
+    key: "3",
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.luohanacademy.com"
+      >
+        Shop
+      </a>
+    ),
+  },
+  {
+    key: "4",
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.luohanacademy.com"
+      >
+        About Us
+      </a>
+    ),
+  },
+  {
+    key: "5",
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.luohanacademy.com"
+      >
+        Contact Us
+      </a>
+    ),
+  },
+];
 
 const NavigationBar = () => {
   const [hideNavLinks, setHideNavLinks] = useState(false);
@@ -16,15 +79,18 @@ const NavigationBar = () => {
 
   return (
     <MainContainer className="navbar-container d-flex justify-content-around">
-      <div className="hideBreadCrum">
-        <img
-          onClick={() => {
-            setHideNavLinks(!hideNavLinks);
-          }}
-          src="./images/sandwitch.png"
-          alt="hidden-icons"
-        />
-      </div>
+      <Dropdown
+        className="hideBreadCrum"
+        menu={{
+          items,
+        }}
+        placement="bottomLeft"
+      >
+        <Button>
+          <img src="./images/sandwitch.png" alt="hidden-icons" />
+        </Button>
+      </Dropdown>
+
       <div>
         <img className="navLogo" src="./images/navLogo.png" alt="nav-image" />
       </div>
