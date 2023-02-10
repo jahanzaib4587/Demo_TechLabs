@@ -1,47 +1,86 @@
 import React from "react";
 import { Col, Row } from "antd";
+import styled from "styled-components";
 
 export const ProfileCards = (props) => {
   const { imgSrc, name, role, description } = props;
 
-  const stylesProfileCards = {
-    cardMainDiv: {
-      backgroundColor: "white",
-      borderRadius: "5px",
-      padding: "40px",
-      display: "flex",
-      justifuContent: "center",
-      flexDirection: "column",
-      alignItems: "center",
-      padding: "125px 60px 15px 60px",
-    },
-    imagesStyle: {
-      display: "flex",
-      justifyContent: "center",
-      position: "relative",
-      top: "100px",
-    },
-    textName: { fontSize: "26px", fontWeight: 700 },
-    textRole: { fontSize: "18px", fontWeight: 400 },
-    textDescription: { fontSize: "17px", fontWeight: 400 },
-  };
-  return (
-    <div>
-      <div style={stylesProfileCards.imagesStyle}>
-        <img src={imgSrc} />
-      </div>
+  const TextName = styled.span`
+    font-size: 26px;
+    font-weight: 700;
+    @media only screen and (max-width: 320px) {
+      font-size: 20px;
+    }
+  `;
+  const TextRole = styled.span`
+    font-size: 16px;
+    font-weight: 500;
+    @media only screen and (max-width: 320px) {
+      font-size: 12px;
+    }
+  `;
+  const TextDescription = styled.span`
+    font-weight: 400;
+    font-size: 16px;
+    display: block;
+    text-align: justify;
+    @media only screen and (max-width: 320px) {
+      font-size: 13px;
+    }
+  `;
 
-      <div style={stylesProfileCards.cardMainDiv}>
+  const CardAdjustments = styled.div`
+    margin-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+  `;
+  const CardMainDiv = styled.div`
+    background-color: white;
+    border-radius: 5px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 125px 60px 15px 60px;
+  `;
+  const ImageDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    @media only screen and (max-width: 320px) {
+      top: 85px;
+    }
+  `;
+  const SpaceTopBottom = styled.div`
+    margin-top: 10px;
+    margin-bottom: 10px;
+  `;
+
+  const RoundImage = styled.img`
+    @media only screen and (max-width: 320px) {
+      width: 50%;
+    }
+    
+  `;
+  return (
+    <CardAdjustments>
+      <ImageDiv>
+        <RoundImage src={imgSrc} />
+      </ImageDiv>
+
+      <CardMainDiv>
         <div>
-          <span style={stylesProfileCards.textName}>{name}</span>
+          <TextName>{name}</TextName>
         </div>
+        <SpaceTopBottom>
+          <TextRole>{role}</TextRole>
+        </SpaceTopBottom>
         <div>
-          <span style={stylesProfileCards.textRole}>{role}</span>
+          <TextDescription>{description}</TextDescription>
         </div>
-        <div>
-          <span style={stylesProfileCards.textDescription}>{description}</span>
-        </div>
-      </div>
-    </div>
+      </CardMainDiv>
+    </CardAdjustments>
   );
 };

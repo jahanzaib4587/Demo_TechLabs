@@ -20,12 +20,22 @@ const AboutUs = () => {
     text-align: justify;
   `;
   const LogoStyle = styled.img`
-    width: 50%;
+    width: 40%;
     height: auto;
+    @media only screen and (max-width: 425px) {
+      width: 70%;
+    }
+  `;
+  const MainDiv = styled(Row)`
+    @media only screen and (max-width: 425px) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   `;
 
   return (
-    <Row justify={"center"} className="px-2 py-4 mt-3">
+    <MainDiv justify={"center"} className="px-2 py-4 mt-3">
       <Col xs={22} sm={22} md={22} lg={19}>
         <TextAboutUs>ABOUT US</TextAboutUs>
 
@@ -53,7 +63,7 @@ const AboutUs = () => {
       >
         <LogoStyle src="./images/navLogo.png" alt="nav-image" />
       </Col>
-    </Row>
+    </MainDiv>
   );
 };
 

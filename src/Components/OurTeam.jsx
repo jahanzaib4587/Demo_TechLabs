@@ -1,29 +1,27 @@
 import React from "react";
 import { Col, Row } from "antd";
 import { ProfileCards } from "./Reuseables/ProfileCards";
+import styled from "styled-components";
 
 const OurTeam = () => {
-  const stylesOurTeam = {
-    textFirst: {
-      fontSize: "22px",
-      fontWeight: "600",
-      display: "block",
-    },
-    textSecond: {
-      fontSize: "30px",
-      fontWeight: "700",
-      display: "block",
-    },
-    textAlignCenter: { textAlign: "center" },
-    marginTopBottom: { marginTop: "70px" },
-    cardStyles: {
-      // marginTop: "40px",
-      marginBottom: "40px",
-      paddingLeft: "15px",
-      paddingRight: "15px",
-    },
-  };
+  const TextFirst = styled.span`
+    font-size: 22px;
+    font-weight: 600;
+    display: block;
+  `;
+  const TextCenter = styled.div`
+    text-align: center;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  `;
+  const SpaceTop70 = styled.div`
+    margin-top: 70px;
+  `;
 
+  // const CardBox = styled.Card
+
+  // @media (max-width: 768px) {
   const CardObjects = [
     {
       img: "./images/profile1.png",
@@ -48,25 +46,23 @@ const OurTeam = () => {
         sm={24}
         md={24}
         lg={24}
-        className="d-flex justify-content-center"
-        style={stylesOurTeam.marginTopBottom}
+        className="d-flex justify-content-center mt-5"
       >
-        <div style={stylesOurTeam.textAlignCenter}>
-          <span style={stylesOurTeam.textFirst}>Our Team</span>
-
-          <span style={stylesOurTeam.textFirst}>Meet Our Team</span>
-        </div>
+        <TextCenter>
+          <TextFirst>Our Team</TextFirst>
+          <TextFirst>Meet Our Team</TextFirst>
+        </TextCenter>
       </Col>
 
-      {CardObjects.map((props) => {
+      {CardObjects.map((props, key) => {
         return (
           <Col
             xs={24}
             sm={24}
-            md={8}
-            lg={8}
+            md={12}
+            lg={10}
             className="d-flex justify-content-center"
-            style={stylesOurTeam.cardStyles}
+            key={key}
           >
             <ProfileCards
               imgSrc={props.img}
